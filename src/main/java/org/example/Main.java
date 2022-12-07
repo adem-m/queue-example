@@ -1,16 +1,15 @@
 package org.example;
 
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        Queue queue = Queue.INSTANCE;
-
-        HealCommand healCommand = new HealCommand(Priority.NORMAL, 2, "Adem", 100);
-        HealCommand healCommand2 = new HealCommand(Priority.HIGH, "Ethan", 50);
-        queue.addCommand(healCommand);
-        queue.addCommand(healCommand2);
-
-        queue.execute();
-        queue.execute();
+        final String FILE_PATH = "C:\\Users\\ademr\\Documents\\Code\\blbla\\src\\main\\resources\\doc.xml";
+        try {
+            MetaDataEntity parse = XmlParser.parse(FILE_PATH);
+            int i = 0;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
